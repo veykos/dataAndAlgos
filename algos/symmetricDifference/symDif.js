@@ -1,6 +1,5 @@
-function findSymmetricDifference(arr1,arr2) {
+function findSymmetricDifferenceInTwoArrs(arr1,arr2) {
   const finalArr = []
-  //working for 2 arrays
   //filter duplicates inside the array
   arr1 = arr1.filter((ele,idx,arr) => arr.indexOf(ele) === idx)
   arr1.forEach(ele => {
@@ -14,10 +13,17 @@ function findSymmetricDifference(arr1,arr2) {
       finalArr.push(ele)
     }
   })
-  // version for 3 or more arrays
-  
-
   return finalArr.sort((a,b) => a-b)
 }
+
+function findSymmetricDifference() {
+  let argArr = Array.from(arguments)
+  argArr = argArr.reduce((prev,next) => {
+    return findSymmetricDifferenceInTwoArrs(prev,next)
+  })
+  return argArr
+}
+
+
 
 module.exports = findSymmetricDifference
