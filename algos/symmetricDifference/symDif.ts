@@ -16,7 +16,7 @@ function findSymmetricDifferenceInTwoArrs(arr1:number[],arr2:number[]):number[] 
   return finalArr.sort((a,b) => a - b)
 }
 
-export default function findSymmetricDifference(arr1:number[],arr2:number[],...arrays:number[]):number[] {
+export default function findSymmetricDifference(arr1:number[],arr2:number[],...args:number[][]):number[] {
   let argArr = Array.from(arguments)
   argArr = argArr.reduce((prev,next) => {
     return findSymmetricDifferenceInTwoArrs(prev,next)

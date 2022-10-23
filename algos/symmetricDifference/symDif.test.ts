@@ -15,4 +15,7 @@ describe('Function findSymmetricDiffrence :', ()=> {
    test('should ignore duplicates in one array', () => {
     expect(findSymmetricDifference([1, 2, 3, 3], [5, 2, 1, 4])).toStrictEqual([3,4,5])
    })
+   test('should properly work with 3 arrays each with duplicates', () => {
+    expect(findSymmetricDifference([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])).toStrictEqual([1,4,5])
+   })
 })
