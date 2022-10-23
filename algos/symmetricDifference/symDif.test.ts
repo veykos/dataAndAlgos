@@ -1,4 +1,4 @@
-const findSymmetricDifference =  require('./symDif')
+import findSymmetricDifference from './symDif'
 require('jest')
 
 describe('Function findSymmetricDiffrence :', ()=> {
