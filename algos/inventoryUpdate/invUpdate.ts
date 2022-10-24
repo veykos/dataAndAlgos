@@ -1,4 +1,6 @@
 
+
+
 type ItemArray = [number, string]
 
 export default function updateInventory(arr1:Array<ItemArray>,arr2:Array<ItemArray>) {
