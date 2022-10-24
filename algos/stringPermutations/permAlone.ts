@@ -22,6 +22,7 @@ export default function permAlone(str: string) {
   return permHelper(str).filter((ele) => !pattern.test(ele)).length;
 }
 
+permAlone('aba')
 //   export default function permAlone(str:string, indx?:number):string[] | string {
 //     const permHolder:string[] = []
 //     if (str.length === 1) {
