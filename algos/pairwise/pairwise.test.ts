@@ -10,4 +10,10 @@ describe('Function pairwise should', () => {
     test('works properly when a square of a number also results in the arg', () => {
         expect(pairwise([1, 3, 2, 4], 4)).toBe(1)
     })
+    test('should work with multiple duplicate working variants at different indexes', () => {
+        expect(pairwise([0, 0, 0, 0, 1, 1], 1)).toBe(10)
+    })
+    test('should return 0 if array is empty', () => {
+        expect(pairwise([], 100)).toBe(0)
+    })
 })

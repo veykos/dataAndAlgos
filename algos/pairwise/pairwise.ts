@@ -1,13 +1,14 @@
 export default function pairwise(arr:number[], arg:number):number {
+    const arrCopy = [...arr]
     let indicesSum = 0
-    let usedIndx:number[] = []
-    arr.forEach((val, indx) => {
+    arrCopy.forEach((val, indx, arr) => {
         const searchedPairValue = arg - val;
         const indexOfSearchedPairValue = arr.indexOf(searchedPairValue)
         // check if index of searched pair exists, if it's already used or if its the same number
-        if (indexOfSearchedPairValue !== -1 && !usedIndx.includes(indexOfSearchedPairValue) && indexOfSearchedPairValue !== indx) {
+        if (indexOfSearchedPairValue !== -1 && indexOfSearchedPairValue !== indx) {
             indicesSum += indx + indexOfSearchedPairValue
-            usedIndx.push(indx, indexOfSearchedPairValue)
+            arr[indx] = NaN;
+            arr[indexOfSearchedPairValue] = NaN
         }
     })
     return indicesSum
